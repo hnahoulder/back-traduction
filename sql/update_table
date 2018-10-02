@@ -1,0 +1,2 @@
+ALTER TABLE fand_hira
+ADD COLUMN texte_francais LONGTEXT AFTER texte;

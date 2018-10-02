@@ -28,13 +28,13 @@ if ($count > 0) {
     $products["count"] = $count;
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
         extract($row);
         $p = array(
             "id" => $id,
             "laharana" => $laharana,
             "andininy" => $andininy,
-            "texte" => $texte
+            "texte" => $texte,
+            "type" => $type
         );
 
         array_push($products["body"], $p);

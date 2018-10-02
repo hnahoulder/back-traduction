@@ -31,7 +31,8 @@ class Fihirana{
     }
     //R
     public function read(){
-        $query = "SELECT id, laharana, andininy, texte FROM `fand_hira` WHERE id>=1 ";
+        $query = "SELECT id, laharana, andininy, CASE WHEN texte IS NULL THEN '' ELSE texte END AS texte, 0 AS type FROM `fand_hira` WHERE id>=1 AND laharana IN(1,2)
+UNION SELECT id, laharana, andininy, CASE  WHEN texte_francais IS NULL THEN '' ELSE texte_francais END AS texte, 1 AS type FROM `fand_hira` WHERE id>=1 AND laharana IN(1,2)";
 
         $stmt = $this->connection->prepare($query);
 
