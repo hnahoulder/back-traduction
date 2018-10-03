@@ -34,7 +34,7 @@ if ($count > 0) {
             "laharana" => $laharana,
             "andininy" => $andininy,
             "texte" => $texte,
-            "type" => $type
+            "texte_francais" => $texte_francais
         );
 
         array_push($products["body"], $p);
