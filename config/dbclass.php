@@ -12,7 +12,7 @@ class DBClass {
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "fihirana";
+    private $database = "hira";
 
     public $connection;
 

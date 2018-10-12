@@ -6,7 +6,8 @@
  * Time: 23:25
  */
 
-class Fihirana{
+class Fihirana
+{
 
     // Connection instance
     private $connection;
@@ -22,15 +23,19 @@ class Fihirana{
 //    public $created;
 
 
-    public function __construct($connection){
+    public function __construct($connection)
+    {
         $this->connection = $connection;
     }
 
     //C
-    public function create(){
+    public function create()
+    {
     }
+
     //R
-    public function read(){
+    public function read()
+    {
         $query = "SELECT id, 
                           laharana, 
                           andininy, 
@@ -49,8 +54,20 @@ class Fihirana{
 
         return $stmt;
     }
+
     //U
-    public function update(){}
+    public function update($data)
+    {
+        foreach ($data as $key => $value) {
+             $query = "UPDATE fand_hira SET texte_francais = '".(string)$value."' WHERE id = ".$key;
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+    }
+
+    }
+
     //D
-    public function delete(){}
+    public function delete()
+    {
+    }
 }
